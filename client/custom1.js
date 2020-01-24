@@ -6,7 +6,7 @@ import { sin, circle } from './util/canvas'
 export default class Example extends Visualizer {
   constructor () {
     super({ volumeSmoothing: 10 })
-    this.theme = ['#0fb323', '#828f72', '#8ea388', '#afb495', '#f4eef1']
+    this.theme = ['#0fb323', '#828f72', '#e4f388', '#afb495', '#f4eef1']
 
     console.log("Sync State")
     console.log(this.sync.state)
