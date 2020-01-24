@@ -8,7 +8,6 @@ if (window.location.hash === '#start') {
   // const example = new Example()
   const custom = new Custom()
 
-  console.log("hello world")
 } else {
   auth()
 }
