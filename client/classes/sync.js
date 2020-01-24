@@ -58,7 +58,8 @@ export default class Sync {
       queues: {
         volume: [],
         beat: []
-      }
+      },
+      albumArt: {}
     })
 
     this.initHooks()

@@ -6,7 +6,12 @@ import { sin, circle } from './util/canvas'
 export default class Example extends Visualizer {
   constructor () {
     super({ volumeSmoothing: 10 })
-    this.theme = ['#4f673a', '#19141a', '#4d9949', '#ca8911', '#f44336']
+    this.theme = ['#0fb323', '#828f72', '#8ea388', '#afb495', '#f4eef1']
+
+    console.log("Sync State")
+    console.log(this.sync.state)
+    console.log(this.sync.state.currentlyPlaying.id)
+    
   }
 
  
@@ -20,13 +25,13 @@ export default class Example extends Visualizer {
   paint ({ ctx, height, width, now }) {
     const bar = interpolateBasis([0, this.sync.volume * 10, 0])(this.sync.bar.progress)
     const beat = interpolateBasis([0, this.sync.volume * 300, 0])(this.sync.beat.progress)
-    ctx.fillStyle = 'rgba(0, 0, 0, .08)'
+    ctx.fillStyle = 'rgba(250, 250, 250, 250)'
     ctx.fillRect(0, 0, width, height)
     ctx.lineWidth = bar 
     ctx.strokeStyle = interpolateRgb(this.lastColor, this.nextColor)(this.sync.bar.progress)
     sin(ctx, now / 50, height / 2, this.sync.volume * 50, 100)
     ctx.stroke()
-    ctx.fillStyle = 'rgba(0, 0, 0, 1)'
+    ctx.fillStyle = 'rgba(250, 250, 250, 250)'
     ctx.beginPath()
     ctx.lineWidth = beat
     circle(ctx, width / 2, height / 2, this.sync.volume * height / 5 + beat / 10)
